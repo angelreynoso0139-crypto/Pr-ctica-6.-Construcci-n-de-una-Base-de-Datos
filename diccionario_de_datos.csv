@@ -1,0 +1,27 @@
+﻿Tabla,Atributo,Dominio,Tipo,Formato,Unidad,Valores Permitidos,Descripción
+Equipo,id_equipo,Clave Primaria,INT,Entero,N/A,Enteros positivos,Identificador único del equipo de fútbol.
+Equipo,nombre_equipo,Nombres de equipos,VARCHAR(50),Texto,N/A,Cadenas de texto,Nombre oficial del equipo.
+Colegiado,id_colegiado,Clave Primaria,INT,Entero,N/A,Enteros positivos,Identificador único del árbitro.
+Colegiado,nombre,Nombres de personas,VARCHAR(100),Texto,N/A,Cadenas de texto,Nombre completo del colegiado.
+Posicion,numero_posicion,Clave Primaria,INT,Entero,N/A,Enteros > 0,Número identificador de la posición.
+Posicion,funcion,Funciones del juego,VARCHAR(50),Texto,N/A,"Ej. Portero, Defensa, etc.",Descripción del rol del jugador.
+Jugador,codigo_jugador,Clave Primaria,INT,Entero,N/A,Enteros positivos,Código de registro del jugador.
+Jugador,nombre,Nombres de personas,VARCHAR(100),Texto,N/A,Cadenas de texto,Nombre completo del jugador.
+Jugador,fecha_nacimiento,Fechas post-1971,DATE,AAAA-MM-DD,N/A,Fechas > 1971-12-31,Fecha de nacimiento para validación de categoría juvenil.
+Jugador,nss,Seguro Social,VARCHAR(15),Texto / Dígitos,N/A,Numérico / Alfanumérico,Número de Seguro Social del jugador.
+Jugador,peso,Peso corporal,"DECIMAL(5,2)",000.00,Kg,Valores reales > 0,Peso físico del jugador.
+Jugador,altura,Estatura,INT,Entero,Cm,Enteros positivos,Altura del jugador en centímetros.
+Jugador,id_equipo,Clave Foránea,INT,Entero,N/A,Clave válida en Equipo,Equipo al que pertenece el jugador.
+Partido,id_partido,Clave Primaria,INT,Entero,N/A,Enteros positivos,Identificador único del encuentro deportivo.
+Partido,fecha,Fechas de 1996,DATE,AAAA-MM-DD,N/A,Entre 1996-01-01 y 1996-12-31,Fecha en la que se efectúa el partido.
+Partido,hora,Horarios autorizados,TIME,HH:MM:SS,Horas,Entre 10:00:00 y 21:30:00,Hora programada del partido.
+Partido,id_equipo_local,Clave Foránea,INT,Entero,N/A,ID de equipo,Equipo que compite como local.
+Partido,id_equipo_visita,Clave Foránea,INT,Entero,N/A,ID de equipo != local,Equipo que compite como visitante.
+Partido,id_arbitro_principal,Clave Foránea,INT,Entero,N/A,ID de colegiado,Árbitro principal del partido.
+Partido,id_arbitro_derecha,Clave Foránea,INT,Entero,N/A,ID de colegiado distinto,Árbitro de banda derecha.
+Partido,id_arbitro_izquierda,Clave Foránea,INT,Entero,N/A,ID de colegiado distinto,Árbitro de banda izquierda.
+Jugador_Posicion_Habilitado,codigo_jugador,Clave Primaria / Foránea,INT,Entero,N/A,ID válido de Jugador,Código del jugador capacitado.
+Jugador_Posicion_Habilitado,numero_posicion,Clave Primaria / Foránea,INT,Entero,N/A,Número válido de Posicion,Posición que el jugador puede ocupar.
+Juega_Partido,id_partido,Clave Primaria / Foránea,INT,Entero,N/A,ID válido de Partido,Encuentro en el que participa el jugador.
+Juega_Partido,codigo_jugador,Clave Primaria / Foránea,INT,Entero,N/A,ID válido de Jugador,Jugador asignado al partido.
+Juega_Partido,numero_posicion,Clave Foránea,INT,Entero,N/A,ID habilitado de Posicion,Posición ejecutada durante el encuentro.
